@@ -6,10 +6,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://192.168.170.31:6969', // Replace with your backend URL
+        target: 'http://192.168.170.31:6969', // Your backend URL
         changeOrigin: true,
-        secure: false, // If you're using a self-signed certificate, set this to false
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/api/, '/api'), // Keep the `/api` prefix
       },
     },
   },
