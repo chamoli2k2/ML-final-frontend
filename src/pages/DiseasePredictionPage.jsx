@@ -36,6 +36,7 @@ export default function DiseasePredictorPage() {
     try {
       const response = await fetch(import.meta.env.VITE_BACKEND_URI, {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
