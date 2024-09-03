@@ -19,19 +19,6 @@ jobs:
         with:
           submodules: true
           lfs: false
-
-      # Add the environment variable logging step
-      - name: Log environment variables for debugging
-        run: |
-          echo "VITE_BACKEND_URI: $VITE_BACKEND_URI"
-          echo "VITE_OPENAI_API_KEY: $VITE_OPENAI_API_KEY"
-          echo "DUMMY_VAR: $DUMMY_VAR"
-        env:
-          VITE_BACKEND_URI: ${{ secrets.VITE_BACKEND_URI }}
-          VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
-          DUMMY_VAR: ${{ secrets.DUMMY_VAR }}
-          VITE_XX_XXX: xxxx
-      
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -42,3 +29,8 @@ jobs:
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "dist" # Built app content directory - optional
+        env:
+          VITE_BACKEND_URI: ${{ secrets.VITE_BACKEND_URI }}
+          VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
+          VITE_OPENAI_URI: ${{ secrets.VITE_OPENAI_URI }}
+          VITE_XX_XXX: xxxx
