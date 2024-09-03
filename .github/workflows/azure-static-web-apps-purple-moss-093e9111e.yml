@@ -29,7 +29,7 @@ jobs:
         env:
           VITE_BACKEND_URI: ${{ secrets.VITE_BACKEND_URI }}
           VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
-          DUMMY_VAR: "This is a test variable"
+          DUMMY_VAR: ${{ secrets.DUMMY_VAR }}
       
       - name: Build And Deploy
         id: builddeploy
