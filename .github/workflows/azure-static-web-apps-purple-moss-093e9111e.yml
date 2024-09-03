@@ -30,6 +30,7 @@ jobs:
           VITE_BACKEND_URI: ${{ secrets.VITE_BACKEND_URI }}
           VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
           DUMMY_VAR: ${{ secrets.DUMMY_VAR }}
+          VITE_XX_XXX: xxxx
       
       - name: Build And Deploy
         id: builddeploy
