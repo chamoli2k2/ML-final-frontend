@@ -25,9 +25,11 @@ jobs:
         run: |
           echo "VITE_BACKEND_URI: $VITE_BACKEND_URI"
           echo "VITE_OPENAI_API_KEY: $VITE_OPENAI_API_KEY"
+          echo "DUMMY_VAR: $DUMMY_VAR"
         env:
           VITE_BACKEND_URI: ${{ secrets.VITE_BACKEND_URI }}
           VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
+          DUMMY_VAR: "This is a test variable"
       
       - name: Build And Deploy
         id: builddeploy
