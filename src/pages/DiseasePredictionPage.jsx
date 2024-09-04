@@ -34,8 +34,6 @@ export default function DiseasePredictorPage() {
   // Handle the submit button click
   const handleSubmit = async () => {
     try {
-      console.log("hello");
-      console.log("VITE_BACKEND_URI", import.meta.env.VITE_BACKEND_URI);
       const response = await fetch(import.meta.env.VITE_BACKEND_URI, {
         method: 'POST',
         headers: {
